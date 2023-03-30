@@ -13,45 +13,48 @@ import jakarta.persistence.ManyToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.RequiredArgsConstructor;
 import lombok.Setter;
 
 @Getter
 @Setter 
 @AllArgsConstructor
-@Entity
+@NoArgsConstructor
 
-@Table (name = "usuario")
+@Entity
+@Table(name = "usuario")
 public class Usuario {
-    @Id 
+    @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private int id_usuario;
-    @Column (name = "nombre_usuario")
+    private int id;
     private String nombre;
+    private String apellido;
+    private String correo;
     private String password;
 
     @ManyToMany
     @JoinTable(
-        name = "lista_equipos_participe",
-        joinColumns = @JoinColumn(name="id_usuario"),
-        inverseJoinColumns = @JoinColumn(name = "id_equipo")
+        name = "jugadores_en_equipo",
+        joinColumns = @JoinColumn(name = "usuario_id"),
+        inverseJoinColumns = @JoinColumn(name = "equipo_id")
     )
-    Set<Equipo> equipos_participe;
-    @ManyToMany
-    //Solicitudes de jugadores de entrar a un equipo
-    @JoinTable(
-        name = "solicitudes_a_equipos",
-        joinColumns = @JoinColumn(name="id_usuario"),
-        inverseJoinColumns = @JoinColumn(name = "id_equipo")
-    )
-    Set<Equipo> solicitudes;
-    //Solicitudes de equ
-    @ManyToMany
-    @JoinTable(
-        name = "invitaciones_a_jugadores",
-        joinColumns = @JoinColumn(name="id_usuario"),
-        inverseJoinColumns = @JoinColumn(name = "id_equipo")
-    )
-    Set<Equipo> invitaciones;
+    private Set<Equipo> equipos_participe;
 
+    @ManyToMany
+    @JoinTable(
+        name = "invitaciones",
+        joinColumns = @JoinColumn(name = "usuario_id"),
+        inverseJoinColumns = @JoinColumn(name = "equipo_id")
+    )
+    private Set<Equipo> invitaciones;
+
+    @ManyToMany
+    @JoinTable(
+        name = "solicitudes",
+        joinColumns = @JoinColumn(name = "usuario_id"),
+        inverseJoinColumns = @JoinColumn(name = "equipo_id")
+    )
+    private Set<Equipo> solicitudes;
 }
+
