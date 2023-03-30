@@ -2,6 +2,7 @@ package model;
 
 import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -10,6 +11,7 @@ import jakarta.persistence.JoinColumn;
 import jakarta.persistence.JoinColumns;
 import jakarta.persistence.JoinTable;
 import jakarta.persistence.ManyToMany;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -32,8 +34,7 @@ public class Equipo {
 
     @ManyToMany (mappedBy = "equipos_participe") 
     Set<Usuario> jugadores_en_equipo;
-    @ManyToMany (mappedBy = "invitaciones")
-    Set<Usuario> invitaciones_a_jugadores;
-    @ManyToMany (mappedBy = "solicitudes")
-    Set<Usuario> solicitudes_de_jugadores;
+
+    @OneToMany(cascade=CascadeType.ALL)
+    Set<Solicitud> solicitudes_de_jugadores;
 }
