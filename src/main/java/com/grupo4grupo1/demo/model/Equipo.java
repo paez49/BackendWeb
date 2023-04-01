@@ -32,6 +32,9 @@ public class Equipo {
     @ManyToMany (mappedBy = "equipos_participe")
     Set<Usuario> jugadores_en_equipo;
 
-    @OneToMany(cascade=CascadeType.ALL)
+    @OneToMany(cascade=CascadeType.ALL,mappedBy = "equipo")
     Set<Solicitud> solicitudes_de_jugadores;
+
+    @OneToMany(cascade = CascadeType.ALL,mappedBy = "equipo")
+    Set<Invitacion> invitaciones_a_jugadores;
 }

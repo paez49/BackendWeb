@@ -12,10 +12,10 @@ public class Solicitud {
     Long id;
 
     @ManyToOne
-    @JoinColumn(name="user_id",nullable = false)
+    @JoinColumn(name="user_id",nullable = false,referencedColumnName="id")
     Usuario usuario;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "team_id",nullable = false)
     Equipo equipo;
 }

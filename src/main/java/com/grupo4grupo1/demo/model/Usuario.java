@@ -37,9 +37,9 @@ public class Usuario {
     private Set<Equipo> equipos_participe;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "usuario")
-    private Set<Invitacion> invitaciones;
+    private Set<Invitacion> invitaciones_de_equipos;
 
     @OneToMany(cascade = CascadeType.ALL,mappedBy = "usuario")
-    private Set<Solicitud> solicitudes;
+    private Set<Solicitud> solicitudes_a_equipos;
 }
 
