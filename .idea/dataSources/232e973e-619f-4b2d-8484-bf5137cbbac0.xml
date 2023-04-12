@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="EquiposDB@192.168.102.100">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.48">
+    <root id="1">
+      <DefaultCasing>exact</DefaultCasing>
+      <DefaultEngine>InnoDB</DefaultEngine>
+      <DefaultTmpEngine>InnoDB</DefaultTmpEngine>
+      <ServerVersion>8.0.32</ServerVersion>
+    </root>
+    <schema id="2" parent="1" name="EquiposDB">
+      <Current>1</Current>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <table id="7" parent="2" name="equipo">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="8" parent="2" name="equipo_seq">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="9" parent="2" name="invitacion">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="10" parent="2" name="invitacion_seq">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="11" parent="2" name="jugadores_en_equipo">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="12" parent="2" name="solicitud">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="13" parent="2" name="solicitud_seq">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="14" parent="2" name="usuario">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <table id="15" parent="2" name="usuario_seq">
+      <Engine>InnoDB</Engine>
+      <CollationName>utf8mb4_0900_ai_ci</CollationName>
+    </table>
+    <column id="16" parent="7" name="id">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="17" parent="7" name="nombre_equipo">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="18" parent="7" name="siglas">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <index id="19" parent="7" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="20" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="21" parent="8" name="next_val">
+      <DasType>bigint|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="22" parent="9" name="id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="23" parent="9" name="team_id">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="24" parent="9" name="user_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <foreign-key id="25" parent="9" name="FKaj7kdqgbcyonsjrndxl1yuqi4">
+      <ColNames>team_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>equipo</RefTableName>
+    </foreign-key>
+    <foreign-key id="26" parent="9" name="FKrvw337cf6yu4cbh7010rjc12m">
+      <ColNames>user_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>usuario</RefTableName>
+    </foreign-key>
+    <index id="27" parent="9" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="28" parent="9" name="FKaj7kdqgbcyonsjrndxl1yuqi4">
+      <ColNames>team_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="29" parent="9" name="FKrvw337cf6yu4cbh7010rjc12m">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="30" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="31" parent="10" name="next_val">
+      <DasType>bigint|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="32" parent="11" name="usuario_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="33" parent="11" name="equipo_id">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <foreign-key id="34" parent="11" name="FK3jeqcb1pes2edgg89xrx1rbfj">
+      <ColNames>usuario_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>usuario</RefTableName>
+    </foreign-key>
+    <foreign-key id="35" parent="11" name="FKjwxfr3gu8hvqkvdtsjuc0b3jk">
+      <ColNames>equipo_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>equipo</RefTableName>
+    </foreign-key>
+    <index id="36" parent="11" name="PRIMARY">
+      <ColNames>usuario_id
+equipo_id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="37" parent="11" name="FKjwxfr3gu8hvqkvdtsjuc0b3jk">
+      <ColNames>equipo_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="38" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="39" parent="12" name="id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="40" parent="12" name="team_id">
+      <DasType>int|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>2</Position>
+    </column>
+    <column id="41" parent="12" name="user_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>3</Position>
+    </column>
+    <foreign-key id="42" parent="12" name="FKq0ihwdp02w45cahpjklmwydtx">
+      <ColNames>team_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>equipo</RefTableName>
+    </foreign-key>
+    <foreign-key id="43" parent="12" name="FKpilnoqjjmpdb677wphmd9hl4p">
+      <ColNames>user_id</ColNames>
+      <RefColNames>id</RefColNames>
+      <RefTableName>usuario</RefTableName>
+    </foreign-key>
+    <index id="44" parent="12" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <index id="45" parent="12" name="FKq0ihwdp02w45cahpjklmwydtx">
+      <ColNames>team_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <index id="46" parent="12" name="FKpilnoqjjmpdb677wphmd9hl4p">
+      <ColNames>user_id</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="47" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="48" parent="13" name="next_val">
+      <DasType>bigint|0s</DasType>
+      <Position>1</Position>
+    </column>
+    <column id="49" parent="14" name="id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
+      <Position>1</Position>
+    </column>
+    <column id="50" parent="14" name="apellido">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>2</Position>
+    </column>
+    <column id="51" parent="14" name="correo">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>3</Position>
+    </column>
+    <column id="52" parent="14" name="nombre">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>4</Position>
+    </column>
+    <column id="53" parent="14" name="password">
+      <DasType>varchar(255)|0s</DasType>
+      <Position>5</Position>
+    </column>
+    <index id="54" parent="14" name="PRIMARY">
+      <ColNames>id</ColNames>
+      <Type>btree</Type>
+      <Unique>1</Unique>
+    </index>
+    <key id="55" parent="14" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <Primary>1</Primary>
+      <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
+    </key>
+    <column id="56" parent="15" name="next_val">
+      <DasType>bigint|0s</DasType>
+      <Position>1</Position>
+    </column>
+  </database-model>
+</dataSource>
