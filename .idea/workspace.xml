@@ -5,28 +5,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1b1d0a5-70f3-4933-b274-8933989c8935" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/JugadorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/d7352ae7-99d2-4c56-8e72-1ac297f3bce8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d7352ae7-99d2-4c56-8e72-1ac297f3bce8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/rest/EquipoRest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/rest/InvitacionRest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/rest/SolicitudRest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/rest/UsuarioRest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/service/EquipoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/service/InvitacionService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/service/SolicitudService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/service/UsuarioService.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/JugadorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Equipo.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Invitacion.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/model/Solicitud.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/repository/EquipoRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/repository/InvitacionRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/repository/SolicitudRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/repository/UsuarioRepository.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/rest/EquipoRest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/rest/InvitacionRest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/rest/SolicitudRest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/rest/UsuarioRest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/EquipoService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/InvitacionService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/SolicitudService.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/service/UsuarioService.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -94,7 +85,23 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="JUnit.JugadorTest.pruebaInsercionUsuario">
+    <configuration name="JugadorTest.pruebaInsercionUsuario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.grupo4grupo1.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.grupo4grupo1.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.grupo4grupo1.demo.JugadorTest" />
+      <option name="METHOD_NAME" value="pruebaInsercionUsuario" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EquiposBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.grupo4grupo1.demo.EquiposBackendApplication" />
@@ -102,6 +109,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.JugadorTest.pruebaInsercionUsuario" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -112,7 +124,7 @@
       <option name="presentableId" value="Default" />
       <updated>1680318166644</updated>
       <workItem from="1681247670274" duration="2686000" />
-      <workItem from="1681272591804" duration="628000" />
+      <workItem from="1681272591804" duration="1852000" />
     </task>
     <servers />
   </component>
