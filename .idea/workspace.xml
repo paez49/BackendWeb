@@ -5,19 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1b1d0a5-70f3-4933-b274-8933989c8935" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/d7352ae7-99d2-4c56-8e72-1ac297f3bce8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d7352ae7-99d2-4c56-8e72-1ac297f3bce8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/rest/EquipoRest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/rest/InvitacionRest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/rest/SolicitudRest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/rest/UsuarioRest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/service/EquipoService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/service/InvitacionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/service/SolicitudService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/service/UsuarioService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Equipo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Invitacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Invitacion.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Solicitud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Solicitud.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Usuario.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/JugadorTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Equipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Equipo.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Invitacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Invitacion.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Solicitud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Solicitud.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Usuario.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/grupo4grupo1/demo/JugadorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/grupo4grupo1/demo/JugadorTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +87,23 @@
       <recent name="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JugadorTest.pruebaInsercionUsuario">
+  <component name="RunManager" selected="JUnit.JugadorTest.testCrearInvitacion">
+    <configuration name="EquiposTest.pruebaInsercionEquipo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.grupo4grupo1.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.grupo4grupo1.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.grupo4grupo1.demo.EquiposTest" />
+      <option name="METHOD_NAME" value="pruebaInsercionEquipo" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="JugadorTest.pruebaInsercionUsuario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
@@ -102,6 +120,22 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="JugadorTest.testCrearInvitacion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.grupo4grupo1.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.grupo4grupo1.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.grupo4grupo1.demo.JugadorTest" />
+      <option name="METHOD_NAME" value="testCrearInvitacion" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="EquiposBackendApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="demo" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.grupo4grupo1.demo.EquiposBackendApplication" />
@@ -111,6 +145,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.JugadorTest.testCrearInvitacion" />
+        <item itemvalue="JUnit.EquiposTest.pruebaInsercionEquipo" />
         <item itemvalue="JUnit.JugadorTest.pruebaInsercionUsuario" />
       </list>
     </recent_temporary>
@@ -124,7 +160,9 @@
       <option name="presentableId" value="Default" />
       <updated>1680318166644</updated>
       <workItem from="1681247670274" duration="2686000" />
-      <workItem from="1681272591804" duration="1852000" />
+      <workItem from="1681272591804" duration="2706000" />
+      <workItem from="1681312661688" duration="888000" />
+      <workItem from="1681320399761" duration="6625000" />
     </task>
     <servers />
   </component>

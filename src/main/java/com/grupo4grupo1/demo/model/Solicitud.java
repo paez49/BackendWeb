@@ -8,14 +8,14 @@ import lombok.Data;
 @Table(name ="solicitud")
 public class Solicitud {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
     @ManyToOne
     @JoinColumn(name="user_id",nullable = false,referencedColumnName="id")
     Usuario usuario;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne()
     @JoinColumn(name = "team_id",nullable = false)
     Equipo equipo;
 }

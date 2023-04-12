@@ -15,7 +15,7 @@ import lombok.Data;
 @Table(name ="invitacion")
 public class Invitacion {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
 
 
@@ -23,7 +23,7 @@ public class Invitacion {
     @JoinColumn(name="user_id",nullable=false,referencedColumnName="id")
     Usuario usuario;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne()
     @JoinColumn(name="team_id",nullable = false)
     Equipo equipo;
 }

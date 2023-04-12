@@ -17,6 +17,7 @@ import lombok.Setter;
 
 @Getter
 @Setter
+
 @AllArgsConstructor
 @NoArgsConstructor
 
@@ -24,17 +25,17 @@ import lombok.Setter;
 @Table (name = "equipo")
 public class Equipo {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
     private String nombreEquipo;
     private String siglas;
 
-    @ManyToMany (mappedBy = "equipos_participe")
+    @ManyToMany (mappedBy = "equipos_participe", cascade = CascadeType.ALL)
     Set<Usuario> jugadores_en_equipo;
 
-    @OneToMany(cascade=CascadeType.ALL,mappedBy = "equipo")
+    @OneToMany(mappedBy = "equipo", cascade = CascadeType.ALL)
     Set<Solicitud> solicitudes_de_jugadores;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "equipo")
+    @OneToMany(mappedBy = "equipo", cascade = CascadeType.ALL)
     Set<Invitacion> invitaciones_a_jugadores;
 }

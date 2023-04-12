@@ -21,7 +21,7 @@ import lombok.Data;
 @Table(name = "usuario")
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nombre;
     private String apellido;
@@ -36,10 +36,10 @@ public class Usuario {
     )
     private Set<Equipo> equipos_participe;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario")
     private Set<Invitacion> invitaciones_de_equipos;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario")
     private Set<Solicitud> solicitudes_a_equipos;
 }
 
