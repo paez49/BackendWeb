@@ -33,7 +33,6 @@ public class UsuarioEquiposTest {
 
       Usuario user = new Usuario();
       user.setNombre("Juan");
-      user.setApellido("Paez");
       user.setCorreo("Juan@Paez.es");
       user.setPassword("test");
       usuarioRepository.save(user);
@@ -41,7 +40,6 @@ public class UsuarioEquiposTest {
 
       user = new Usuario();
       user.setNombre("Juan");
-      user.setApellido("Eskere");
       user.setCorreo("Juan@Sanchez.es");
       user.setPassword("test123");
       usuarioRepository.save(user);

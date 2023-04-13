@@ -1116,22 +1116,22 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <CollationName>utf8mb4_0900_ai_ci</CollationName>
     </table>
     <column id="303" parent="298" name="id">
-      <AutoIncrement>4</AutoIncrement>
+      <AutoIncrement>2</AutoIncrement>
       <DasType>int|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="304" parent="298" name="nombre_equipo">
-      <DasType>varchar(255)|0s</DasType>
+    <column id="304" parent="298" name="eliminado">
+      <DasType>bit(1)|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>2</Position>
     </column>
-    <column id="305" parent="298" name="siglas">
+    <column id="305" parent="298" name="nombre_equipo">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="306" parent="298" name="eliminado">
-      <DasType>bit(1)|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="306" parent="298" name="siglas">
+      <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
     <index id="307" parent="298" name="PRIMARY">
@@ -1145,23 +1145,22 @@ sys|schema||mysql.sys|localhost|TRIGGER|G</Grants>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="309" parent="299" name="id">
-      <AutoIncrement>4</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="310" parent="299" name="team_id">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="310" parent="299" name="aceptada">
+      <DasType>bit(1)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="311" parent="299" name="user_id">
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="311" parent="299" name="team_id">
+      <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="312" parent="299" name="aceptada">
-      <DasType>bit(1)|0s</DasType>
+    <column id="312" parent="299" name="user_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <foreign-key id="313" parent="299" name="FKaj7kdqgbcyonsjrndxl1yuqi4">
@@ -1233,23 +1232,22 @@ equipo_id</ColNames>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
     </key>
     <column id="327" parent="301" name="id">
-      <AutoIncrement>4</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="328" parent="301" name="team_id">
-      <DasType>int|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="328" parent="301" name="aceptada">
+      <DasType>bit(1)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="329" parent="301" name="user_id">
-      <DasType>bigint|0s</DasType>
-      <NotNull>1</NotNull>
+    <column id="329" parent="301" name="team_id">
+      <DasType>int|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="330" parent="301" name="aceptada">
-      <DasType>bit(1)|0s</DasType>
+    <column id="330" parent="301" name="user_id">
+      <DasType>bigint|0s</DasType>
+      <NotNull>1</NotNull>
       <Position>4</Position>
     </column>
     <foreign-key id="331" parent="301" name="FKq0ihwdp02w45cahpjklmwydtx">
@@ -1286,33 +1284,29 @@ team_id</ColNames>
       <UnderlyingIndexName>UKo7qgu6lhvsa3si0o9kvcsr1ud</UnderlyingIndexName>
     </key>
     <column id="338" parent="302" name="id">
-      <AutoIncrement>4</AutoIncrement>
+      <AutoIncrement>1</AutoIncrement>
       <DasType>bigint|0s</DasType>
       <NotNull>1</NotNull>
       <Position>1</Position>
     </column>
-    <column id="339" parent="302" name="apellido">
+    <column id="339" parent="302" name="correo">
       <DasType>varchar(255)|0s</DasType>
       <Position>2</Position>
     </column>
-    <column id="340" parent="302" name="correo">
+    <column id="340" parent="302" name="nombre">
       <DasType>varchar(255)|0s</DasType>
       <Position>3</Position>
     </column>
-    <column id="341" parent="302" name="nombre">
+    <column id="341" parent="302" name="password">
       <DasType>varchar(255)|0s</DasType>
       <Position>4</Position>
     </column>
-    <column id="342" parent="302" name="password">
-      <DasType>varchar(255)|0s</DasType>
-      <Position>5</Position>
-    </column>
-    <index id="343" parent="302" name="PRIMARY">
+    <index id="342" parent="302" name="PRIMARY">
       <ColNames>id</ColNames>
       <Type>btree</Type>
       <Unique>1</Unique>
     </index>
-    <key id="344" parent="302" name="PRIMARY">
+    <key id="343" parent="302" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <Primary>1</Primary>
       <UnderlyingIndexName>PRIMARY</UnderlyingIndexName>
