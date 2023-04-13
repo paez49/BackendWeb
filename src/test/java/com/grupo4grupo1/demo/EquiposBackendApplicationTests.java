@@ -8,6 +8,8 @@ class EquiposBackendApplicationTests {
 
 	@Test
 	void contextLoads() {
+
+
 	}
 
 }

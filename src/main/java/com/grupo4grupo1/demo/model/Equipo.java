@@ -29,13 +29,14 @@ public class Equipo {
     private int id;
     private String nombreEquipo;
     private String siglas;
+    private boolean eliminado = false;
 
-    @ManyToMany (mappedBy = "equipos_participe", cascade = CascadeType.ALL)
+    @ManyToMany (mappedBy = "equipos_participe", cascade = CascadeType.REMOVE)
     Set<Usuario> jugadores_en_equipo;
 
-    @OneToMany(mappedBy = "equipo", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "equipo", cascade = CascadeType.REMOVE)
     Set<Solicitud> solicitudes_de_jugadores;
 
-    @OneToMany(mappedBy = "equipo", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "equipo", cascade = CascadeType.REMOVE)
     Set<Invitacion> invitaciones_a_jugadores;
 }

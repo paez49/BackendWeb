@@ -1,22 +1,16 @@
 package com.grupo4grupo1.demo.model;
 
-import jakarta.persistence.CascadeType;
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.Data;
 
 @Data
 @Entity
-@Table(name ="invitacion")
+@Table(name ="invitacion", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "team_id"})})
 public class Invitacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    Boolean aceptada;
 
 
     @ManyToOne()
@@ -24,6 +18,6 @@ public class Invitacion {
     Usuario usuario;
 
     @ManyToOne()
-    @JoinColumn(name="team_id",nullable = false)
+    @JoinColumn(name="team_id")
     Equipo equipo;
 }

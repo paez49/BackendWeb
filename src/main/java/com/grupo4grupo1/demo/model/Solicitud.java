@@ -5,17 +5,18 @@ import lombok.Data;
 
 @Data
 @Entity
-@Table(name ="solicitud")
+@Table(name ="solicitud", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "team_id"})})
 public class Solicitud {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
+    Boolean aceptada;
 
     @ManyToOne
     @JoinColumn(name="user_id",nullable = false,referencedColumnName="id")
     Usuario usuario;
 
     @ManyToOne()
-    @JoinColumn(name = "team_id",nullable = false)
+    @JoinColumn(name = "team_id")
     Equipo equipo;
 }

@@ -5,21 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1b1d0a5-70f3-4933-b274-8933989c8935" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/SolicitudTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/UsuarioEquiposTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/d7352ae7-99d2-4c56-8e72-1ac297f3bce8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d7352ae7-99d2-4c56-8e72-1ac297f3bce8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Equipo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Invitacion.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Invitacion.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Solicitud.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Solicitud.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/JugadorTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/EquiposBackendApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/EquiposBackendApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/JugadorTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/InvitacionTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Equipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Equipo.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Invitacion.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Invitacion.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Solicitud.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Solicitud.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/grupo4grupo1/demo/JugadorTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/grupo4grupo1/demo/JugadorTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/grupo4grupo1/demo/EquiposBackendApplicationTests.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/grupo4grupo1/demo/EquiposBackendApplicationTests.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/grupo4grupo1/demo/JugadorTest.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,41 +54,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/paez/Escritorio/BORRAR WEB/BackendWeb&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.lookFeel&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;fe01ce2a7fbac8fafaed7c982a04e229&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/home/paez/Escritorio/BORRAR WEB/BackendWeb",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "spring.configuration.checksum": "fe01ce2a7fbac8fafaed7c982a04e229",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.JugadorTest.testCrearInvitacion">
-    <configuration name="EquiposTest.pruebaInsercionEquipo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="Spring Boot.EquiposBackendApplication">
+    <configuration name="DeleteEquiposTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -97,14 +97,29 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.grupo4grupo1.demo" />
-      <option name="MAIN_CLASS_NAME" value="com.grupo4grupo1.demo.EquiposTest" />
-      <option name="METHOD_NAME" value="pruebaInsercionEquipo" />
+      <option name="MAIN_CLASS_NAME" value="com.grupo4grupo1.demo.DeleteEquiposTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="DeleteEquiposTest.testEliminarEquipo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.grupo4grupo1.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.grupo4grupo1.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.grupo4grupo1.demo.DeleteEquiposTest" />
+      <option name="METHOD_NAME" value="testEliminarEquipo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JugadorTest.pruebaInsercionUsuario" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="InvitacionTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -113,14 +128,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.grupo4grupo1.demo" />
-      <option name="MAIN_CLASS_NAME" value="com.grupo4grupo1.demo.JugadorTest" />
-      <option name="METHOD_NAME" value="pruebaInsercionUsuario" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.grupo4grupo1.demo.InvitacionTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="JugadorTest.testCrearInvitacion" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SolicitudTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="demo" />
       <extension name="coverage">
         <pattern>
@@ -129,9 +143,23 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.grupo4grupo1.demo" />
-      <option name="MAIN_CLASS_NAME" value="com.grupo4grupo1.demo.JugadorTest" />
-      <option name="METHOD_NAME" value="testCrearInvitacion" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="com.grupo4grupo1.demo.SolicitudTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UsuarioEquiposTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="demo" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.grupo4grupo1.demo.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.grupo4grupo1.demo" />
+      <option name="MAIN_CLASS_NAME" value="com.grupo4grupo1.demo.UsuarioEquiposTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -145,9 +173,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.JugadorTest.testCrearInvitacion" />
-        <item itemvalue="JUnit.EquiposTest.pruebaInsercionEquipo" />
-        <item itemvalue="JUnit.JugadorTest.pruebaInsercionUsuario" />
+        <item itemvalue="JUnit.DeleteEquiposTest.testEliminarEquipo" />
+        <item itemvalue="JUnit.DeleteEquiposTest" />
+        <item itemvalue="JUnit.SolicitudTest" />
+        <item itemvalue="JUnit.InvitacionTest" />
+        <item itemvalue="JUnit.UsuarioEquiposTest" />
       </list>
     </recent_temporary>
   </component>
@@ -162,7 +192,8 @@
       <workItem from="1681247670274" duration="2686000" />
       <workItem from="1681272591804" duration="2706000" />
       <workItem from="1681312661688" duration="888000" />
-      <workItem from="1681320399761" duration="6625000" />
+      <workItem from="1681320399761" duration="6938000" />
+      <workItem from="1681354529043" duration="6910000" />
     </task>
     <servers />
   </component>
@@ -179,6 +210,11 @@
           <properties class="org.springframework.beans.factory.UnsatisfiedDependencyException" package="org.springframework.beans.factory" />
           <option name="timeStamp" value="1" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/InvitacionTest.java</url>
+          <line>16</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
   </component>
