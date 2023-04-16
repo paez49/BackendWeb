@@ -5,22 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b1b1d0a5-70f3-4933-b274-8933989c8935" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/service/EquipoService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/DeleteEquipoTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/d7352ae7-99d2-4c56-8e72-1ac297f3bce8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/d7352ae7-99d2-4c56-8e72-1ac297f3bce8.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Equipo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Equipo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/model/Usuario.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/repository/EquipoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/grupo4grupo1/demo/repository/EquipoRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/InvitacionTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/SolicitudTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/InvitacionSolicitudTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/UsuarioEquiposTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/UsuarioEquiposTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Equipo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Equipo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Usuario.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/grupo4grupo1/demo/model/Usuario.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/classpath.index" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/classpath.index" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/grupo4grupo1/demo/InvitacionTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/grupo4grupo1/demo/SolicitudTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/test-classes/com/grupo4grupo1/demo/UsuarioEquiposTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/grupo4grupo1/demo/UsuarioEquiposTest.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/DeleteEquipoTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/grupo4grupo1/demo/DeleteEquipoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/grupo4grupo1/demo/DeleteEquipoTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/test-classes/com/grupo4grupo1/demo/DeleteEquipoTest.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -196,7 +184,9 @@
       <workItem from="1681312661688" duration="888000" />
       <workItem from="1681320399761" duration="6938000" />
       <workItem from="1681354529043" duration="9348000" />
-      <workItem from="1681392771447" duration="9940000" />
+      <workItem from="1681392771447" duration="10355000" />
+      <workItem from="1681420249909" duration="2505000" />
+      <workItem from="1681526575428" duration="646000" />
     </task>
     <servers />
   </component>

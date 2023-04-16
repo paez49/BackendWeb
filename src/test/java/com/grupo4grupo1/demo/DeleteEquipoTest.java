@@ -1,6 +1,7 @@
 package com.grupo4grupo1.demo;
 
 import com.grupo4grupo1.demo.model.Equipo;
+import com.grupo4grupo1.demo.model.Usuario;
 import com.grupo4grupo1.demo.repository.EquipoRepository;
 import com.grupo4grupo1.demo.repository.UsuarioRepository;
 import com.grupo4grupo1.demo.service.EquipoService;
@@ -24,6 +25,8 @@ public class DeleteEquipoTest {
   private EquipoRepository equipoRepository;
   @Autowired
   private EquipoService equipoService;
+  @Autowired
+  private UsuarioRepository usuarioRepository;
   @Test
   public void testDeleteByIdLogic() {
     // Elimina el equipo con deleteByIdLogic
@@ -40,8 +43,6 @@ public class DeleteEquipoTest {
     } catch (NoSuchElementException e) {
       Assertions.assertTrue(true);
     }
-
-    // Imprime la lista de equipos
 
 
   }
