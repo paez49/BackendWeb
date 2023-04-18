@@ -21,14 +21,13 @@ import lombok.Data;
 @Table(name = "usuario")
 public class Usuario {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
     private String nombre;
-    private String apellido;
     private String correo;
     private String password;
 
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.REMOVE)
     @JoinTable(
         name = "jugadores_en_equipo",
         joinColumns = @JoinColumn(name = "usuario_id"),
@@ -36,10 +35,10 @@ public class Usuario {
     )
     private Set<Equipo> equipos_participe;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario",cascade= CascadeType.REMOVE)
     private Set<Invitacion> invitaciones_de_equipos;
 
-    @OneToMany(cascade = CascadeType.ALL,mappedBy = "usuario")
+    @OneToMany(mappedBy = "usuario",cascade = CascadeType.REMOVE)
     private Set<Solicitud> solicitudes_a_equipos;
 }
 
