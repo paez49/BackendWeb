@@ -17,7 +17,7 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
-@Transactional
+//@Transactional
 @SpringBootTest
 
 public class DeleteEquipoTest {
@@ -25,25 +25,16 @@ public class DeleteEquipoTest {
   private EquipoRepository equipoRepository;
   @Autowired
   private EquipoService equipoService;
-  @Autowired
-  private UsuarioRepository usuarioRepository;
+
   @Test
+  @Transactional
   public void testDeleteByIdLogic() {
     // Elimina el equipo con deleteByIdLogic
-    Equipo equipo = new Equipo();
-    equipo.setNombreEquipo("Eskere FC");
-    equipo.setSiglas("EFC");
-    equipoRepository.save(equipo);
-    equipoService.remove((long)1);
+    equipoService.remove(1L);
 
-    Optional<Equipo> equipoAux = equipoRepository.findById((long)1);
-    try {
-      // Si se encuentra el equipo, la prueba fallará
-      Assertions.assertFalse(equipoAux.isPresent());
-    } catch (NoSuchElementException e) {
-      Assertions.assertTrue(true);
-    }
-
-
+    // Verifica si el equipo fue eliminado correctamente
+    Optional<Equipo> equipoAux = equipoRepository.findById(1L);
+    Assertions.assertTrue(equipoAux.isPresent(), "El equipo todavia existe");
+    Assertions.assertTrue(equipoAux.get().isEliminado(), "La eliminación lógica se realizó correctamente");
   }
 }

@@ -5,6 +5,8 @@ import com.grupo4grupo1.demo.repository.EquipoRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.Optional;
+
 @Service
 public class EquipoService {
 
@@ -16,9 +18,13 @@ public class EquipoService {
   }
 
   public void remove(Long id){
-    equipoRepository.deleteById(id);
+    Optional<Equipo> equipoOptional = equipoRepository.findById(id);
+    if (equipoOptional.isPresent()) {
+      Equipo equipo = equipoOptional.get();
+      equipo.setEliminado(true); // establecer el valor de "eliminado" a false
+      equipoRepository.save(equipo); // guardar el objeto actualizado en la base de datos
+    }
   }
-
   public Iterable<Equipo> findAll(){
     return equipoRepository.findAll();
   }

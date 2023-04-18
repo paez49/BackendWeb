@@ -25,7 +25,7 @@ import org.hibernate.annotations.Where;
 @Entity
 @Table(name = "equipo")
 @SQLDelete(sql = "UPDATE equipo SET eliminado = true WHERE id=?")
-@Where(clause = "eliminado=false")
+//@Where(clause = "eliminado=false")
 public class Equipo {
 
   @Id
