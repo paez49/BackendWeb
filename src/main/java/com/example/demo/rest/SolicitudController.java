@@ -9,11 +9,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/solicitudes")
 public class SolicitudController {
     @Autowired
     SolicitudService solicitudService;
-    @PostMapping("/solicitudes")
+    @PostMapping("/add")
     public ResponseEntity<?> crearSolicitud(@RequestParam Long idUsuario, @RequestParam Long idEquipo) {
         solicitudService.crearSolicitud(idUsuario, idEquipo);
         return ResponseEntity.ok().build();

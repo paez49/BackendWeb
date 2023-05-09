@@ -15,11 +15,11 @@ public class InvitacionController {
     @Autowired
     private InvitacionService invitacionService;
 
-    @PostMapping("/agregar/{equipoId}/{usuarioId}")
-    public void crearInvitacion(@PathVariable Long equipoId, @PathVariable Long usuarioId) {
-         invitacionService.crearInvitacion(equipoId, usuarioId);
+    @PostMapping("/add")
+    public void crearInvitacion(@RequestParam Long idUsuario, @RequestParam Long idEquipo) {
+         invitacionService.crearInvitacion(idEquipo, idUsuario);
     }
-    @GetMapping("/invitaciones")
+    @GetMapping("/all")
     public ResponseEntity<List<Invitacion>> obtenerTodasLasInvitaciones() {
         List<Invitacion> invitaciones = (List<Invitacion>) invitacionService.findAll();
         return ResponseEntity.ok().body(invitaciones);
