@@ -1,8 +1,10 @@
 package com.example.demo.util;
 
 import com.example.demo.domain.Equipo;
+import com.example.demo.domain.Invitacion;
 import com.example.demo.domain.Usuario;
 import com.example.demo.dto.EquipoDTO;
+import com.example.demo.dto.InvitacionDTO;
 import com.example.demo.dto.UsuarioDTO;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
@@ -37,5 +39,11 @@ public class ConverterDTO {
                 .map(equipo -> modelMapper.map(equipo, EquipoDTO.class))
                 .collect(Collectors.toList());
         return equiposDTO;
+    }
+    public List<InvitacionDTO> toDtoListInvitaciones(List<Invitacion> invitaciones){
+        List<InvitacionDTO> invitacionesDTO = invitaciones.stream()
+                .map(invitacion -> modelMapper.map(invitacion, InvitacionDTO.class))
+                .collect(Collectors.toList());
+        return invitacionesDTO;
     }
 }

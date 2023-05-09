@@ -7,6 +7,8 @@ import com.example.demo.repository.InvitacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class InvitacionService {
     @Autowired
@@ -28,11 +30,8 @@ public class InvitacionService {
 
         invitacionRepository.save(invitacion);
     }
-    public Invitacion save(Invitacion invitacion){
-        return invitacionRepository.save(invitacion);
-    }
-    public Iterable<Invitacion> findAll(){
-        return invitacionRepository.findAll();
+    public List<Invitacion> obtenerInvitacionesPorIdUsuario(long idUsuario){
+        return invitacionRepository.findByUsuarioId(idUsuario);
     }
 
 
