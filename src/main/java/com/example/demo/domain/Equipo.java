@@ -22,7 +22,7 @@ public class Equipo {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private long id;
   private String nombreEquipo;
   private String siglas;
   private boolean eliminado= Boolean.FALSE;

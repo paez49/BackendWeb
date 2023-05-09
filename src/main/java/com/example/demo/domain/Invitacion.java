@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 @Data
 @Entity
-@Table(name ="invitacion", uniqueConstraints = {@UniqueConstraint(columnNames = {"user_id", "team_id"})})
+@Table(name ="invitacion", uniqueConstraints = {@UniqueConstraint(columnNames = {"id_usuario", "id_equipo"})})
 public class Invitacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,10 +15,10 @@ public class Invitacion {
 
 
     @ManyToOne()
-    @JoinColumn(name="user_id",nullable=false,referencedColumnName="id")
+    @JoinColumn(name="id_usuario",nullable=false,referencedColumnName="id")
     Usuario usuario;
 
     @ManyToOne()
-    @JoinColumn(name="team_id")
+    @JoinColumn(name="id_equipo")
     Equipo equipo;
 }

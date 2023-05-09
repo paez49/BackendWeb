@@ -19,4 +19,7 @@ public class UsuarioService {
     public Usuario save(Usuario usuario) {
         return usuarioRepository.save(usuario);
     }
+    public Iterable<Usuario> findAll(){
+        return usuarioRepository.findAll();
+    }
 }

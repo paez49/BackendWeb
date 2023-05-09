@@ -24,8 +24,8 @@ public class Usuario {
     @ManyToMany(cascade = CascadeType.REMOVE)
     @JoinTable(
         name = "jugadores_en_equipo",
-        joinColumns = @JoinColumn(name = "usuario_id"),
-        inverseJoinColumns = @JoinColumn(name = "equipo_id")
+        joinColumns = @JoinColumn(name = "id_usuario"),
+        inverseJoinColumns = @JoinColumn(name = "id_equipo")
     )
     private Set<Equipo> equipos_participe;
 
