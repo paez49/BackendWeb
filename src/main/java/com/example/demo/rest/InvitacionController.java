@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/invitaciones")
 public class InvitacionController {
     @Autowired
     private InvitacionService invitacionService;
@@ -24,8 +24,8 @@ public class InvitacionController {
     public void crearInvitacion(@PathVariable Long equipoId, @PathVariable Long usuarioId) {
          invitacionService.crearInvitacion(equipoId, usuarioId);
     }*/
-    @GetMapping("/invitaciones/{idUsuario}")
-    public ResponseEntity<List<InvitacionDTO>> obtenerTodasLasInvitaciones(@PathVariable Long idUsuario) {
+    @GetMapping("/get/{idUsuario}")
+    public ResponseEntity<List<InvitacionDTO>> obtenerTodasLasInvitacionesPorIdUsuario(@PathVariable Long idUsuario) {
         List<InvitacionDTO> invitaciones = converterDTO.toDtoListInvitaciones(invitacionService.obtenerInvitacionesPorIdUsuario(idUsuario));
         return ResponseEntity.ok().body(invitaciones);
     }
