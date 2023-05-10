@@ -33,7 +33,7 @@ public class SolicitudController {
         }
     }
     //Mostrar todas las solicitudes
-    //Equipos -> Invitaciones pendientes
+    //Equipos -> Solicitudes pendientes
     @GetMapping("/get/{idUsuario}")
     public ResponseEntity<List<SolicitudDTO>> obtenerSolicitudesPorIdUsuario(@PathVariable Long idUsuario) {
             List<SolicitudDTO> solicitudes = converterDTO.toDtoListSolicitudes(solicitudService.obtenerSolcitudesPorIdUsuario(idUsuario));
