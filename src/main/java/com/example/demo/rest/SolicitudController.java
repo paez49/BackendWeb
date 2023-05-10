@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/solicitudes")
 public class SolicitudController {
     @Autowired
     SolicitudService solicitudService;
@@ -19,6 +19,7 @@ public class SolicitudController {
     //Crear solicitud
     //Lista solicitudes -> Boton enviar solicitud
     @PostMapping("/solicitudes")
+
     public ResponseEntity<?> crearSolicitud(@RequestParam Long idUsuario, @RequestParam Long idEquipo) {
         try {
             solicitudService.crearSolicitud(idUsuario, idEquipo);

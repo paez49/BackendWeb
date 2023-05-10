@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/usuarios")
 public class UsuarioController {
     @Autowired
     UsuarioService usuarioService;
@@ -24,7 +24,7 @@ public class UsuarioController {
     EquipoService equipoService;
     @Autowired
     private ConverterDTO converterDTO;
-    @GetMapping("/usuarios")
+    @GetMapping("/all")
     public List<UsuarioDTO> findAll() {
         List<Usuario> usuarios = (List<Usuario>) usuarioService.findAll();
         List<UsuarioDTO> usuariosDTO = converterDTO.toDtoListUsuarios(usuarios);
@@ -32,7 +32,7 @@ public class UsuarioController {
     }
     //Obtener todos los equipos los cuales el usuario no pertenece
     //Lista equipos -> Presentacion lista de equipos
-    @GetMapping("/usuarios/{id}/equipos_disponibles")
+    @GetMapping("/{id}/equipos_disponibles")
     public List<EquipoDTO> obtenerEquiposDisponibles(@PathVariable Long id) {
         List<Equipo> equipos = equipoService.buscarEquiposDisponibles(id);
         List<EquipoDTO> equipoDTO = converterDTO.toDtoListEquipos(equipos);

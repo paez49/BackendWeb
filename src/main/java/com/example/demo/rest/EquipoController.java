@@ -16,7 +16,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/equipos")
 public class EquipoController {
     @Autowired
     EquipoRepository equipoRepository;
@@ -25,11 +25,11 @@ public class EquipoController {
     @Autowired
     private ConverterDTO converterDTO;
     //Obtener todos los equipos
-    @GetMapping("/equipos")
+    @GetMapping("/all")
     public List<Equipo> findAll() {
         return equipoRepository.findAll();
     }
-    @GetMapping("/equipos/{id}")
+    @GetMapping("/{id}")
     public ResponseEntity<EquipoDTO> obtenerEquipo(@PathVariable Long id) {
         Equipo equipo = equipoService.findById(id);
         if (equipo == null) {

@@ -18,7 +18,6 @@ public class InvitacionController {
     private InvitacionService invitacionService;
     @Autowired
     private ConverterDTO converterDTO;
-
     /*
     @PostMapping("/agregar/{equipoId}/{usuarioId}")
     public void crearInvitacion(@PathVariable Long equipoId, @PathVariable Long usuarioId) {
@@ -27,7 +26,6 @@ public class InvitacionController {
     @GetMapping("/get/{idUsuario}")
     public ResponseEntity<List<InvitacionDTO>> obtenerTodasLasInvitacionesPorIdUsuario(@PathVariable Long idUsuario) {
         List<InvitacionDTO> invitaciones = converterDTO.toDtoListInvitaciones(invitacionService.obtenerInvitacionesPorIdUsuario(idUsuario));
-        return ResponseEntity.ok().body(invitaciones);
-    }
+
 
 }
