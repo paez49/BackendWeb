@@ -8,6 +8,7 @@ import com.example.demo.security.payload.LoginRequest;
 import com.example.demo.security.payload.MessageResponse;
 import com.example.demo.security.payload.RegisterRequest;
 import com.example.demo.service.UsuarioService;
+import com.example.demo.util.ConverterDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -19,6 +20,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Controlador para llevar a cabo la autenticación utilizando JWT
@@ -54,7 +58,7 @@ public class AuthController {
     }
 
     @PostMapping("/login")
-    public ResponseEntity<UsuarioDTO> login(@RequestBody LoginRequest loginRequest) {
+    public ResponseEntity<Map<String, Object>> login(@RequestBody LoginRequest loginRequest) {
 
         Authentication authentication = authManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
@@ -64,14 +68,15 @@ public class AuthController {
 
         Usuario user = usuarioService.findByUsername(loginRequest.getUsername());
 
-        UsuarioDTO UsuarioDTO = new UsuarioDTO();
-        UsuarioDTO.setId(user.getId());
-        UsuarioDTO.setEmail(user.getEmail());
-        UsuarioDTO.setUsername(user.getUsername());
-        UsuarioDTO.setToken(jwt);
+        ConverterDTO converterDTO = new ConverterDTO();
+        UsuarioDTO usuarioDTO = converterDTO.toDto(user);
+        Map<String, Object> response = new HashMap<>();
+        response.put("user", usuarioDTO);
+        response.put("token", jwt);
 
-        return ResponseEntity.ok(UsuarioDTO);
+        return ResponseEntity.ok(response);
     }
+
 
 
     @PostMapping("/register")
