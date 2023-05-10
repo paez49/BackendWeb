@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.Equipo;
+import com.example.demo.domain.Invitacion;
 import com.example.demo.domain.Solicitud;
 import com.example.demo.domain.Usuario;
 import com.example.demo.repository.SolicitudRepository;
@@ -8,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.EntityNotFoundException;
+import java.util.List;
 
 @Service
 public class SolicitudService {
@@ -28,5 +30,8 @@ public class SolicitudService {
         solicitud.setAceptada(null);
 
         solicitudRepository.save(solicitud);
+    }
+    public List<Solicitud> obtenerSolcitudesPorIdUsuario(long idUsuario){
+        return solicitudRepository.findByUsuarioId(idUsuario);
     }
 }
