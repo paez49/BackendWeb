@@ -12,7 +12,6 @@ public class Solicitud {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     Long id;
-    Boolean aceptada;
 
     @ManyToOne
     @JoinColumn(name="id_usuario",nullable = false,referencedColumnName="id")

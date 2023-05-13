@@ -47,5 +47,6 @@ public class InvitacionService {
         UsuarioDTO usuario = invitacion.getUsuario();
         EquipoDTO equipo = invitacion.getEquipo();
         usuarioService.agregarUsuarioEquipo(usuario, equipo);
+        invitacionRepository.deleteById(invitacion.getId());
     }
 }
