@@ -34,6 +34,7 @@ public class EquipoController {
         return ResponseEntity.ok(equipoDTO);
     }
     //Traer equipos en los que no hace parte el usuario
+    // Lista equipos -> Presentacion
     @GetMapping("/{idUsuario}/equipos_disponibles")
     public List<EquipoDTO> obtenerEquiposDisponibles(@PathVariable Long idUsuario) {
         List<Equipo> equipos = equipoService.buscarEquiposDisponibles(idUsuario);
