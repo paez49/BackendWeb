@@ -1,6 +1,7 @@
 package com.example.demo.service;
 
 import com.example.demo.domain.Equipo;
+import com.example.demo.domain.Solicitud;
 import com.example.demo.domain.Usuario;
 import com.example.demo.dto.EquipoDTO;
 import com.example.demo.dto.UsuarioDTO;
@@ -8,6 +9,7 @@ import com.example.demo.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
 import java.util.NoSuchElementException;
 
 @Service
@@ -38,4 +40,5 @@ public class UsuarioService {
         usuario.getEquipos_participe().add(equipo);
         usuarioRepository.save(usuario);
     }
+
 }

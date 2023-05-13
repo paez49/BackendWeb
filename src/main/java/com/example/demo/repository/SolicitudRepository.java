@@ -9,4 +9,6 @@ import java.util.List;
 public interface SolicitudRepository extends JpaRepository<Solicitud,Long>{
 
     List<Solicitud> findByUsuarioId(long idUsuario);
+
+    List<Solicitud> findByEquipoId(long idEquipo);
 }
