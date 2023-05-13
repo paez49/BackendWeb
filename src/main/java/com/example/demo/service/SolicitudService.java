@@ -27,7 +27,7 @@ public class SolicitudService {
         Solicitud solicitud = new Solicitud();
         solicitud.setUsuario(usuario);
         solicitud.setEquipo(equipo);
-        solicitud.setAceptada(null);
+
 
         solicitudRepository.save(solicitud);
     }
