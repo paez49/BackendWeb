@@ -1,12 +1,16 @@
 package com.example.demo.rest;
 
 import com.example.demo.domain.Usuario;
+import com.example.demo.dto.UsuarioDTO;
 import com.example.demo.repository.UsuarioRepository;
 import com.example.demo.security.jwt.JwtTokenUtil;
 import com.example.demo.security.payload.JwtResponse;
 import com.example.demo.security.payload.LoginRequest;
 import com.example.demo.security.payload.MessageResponse;
 import com.example.demo.security.payload.RegisterRequest;
+import com.example.demo.service.UsuarioService;
+import com.example.demo.util.ConverterDTO;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
@@ -17,6 +21,9 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * Controlador para llevar a cabo la autenticación utilizando JWT
@@ -32,22 +39,28 @@ import org.springframework.web.bind.annotation.RestController;
 public class AuthController {
 
     private final AuthenticationManager authManager;
+    @Autowired
     private final UsuarioRepository userRepository;
+
+    @Autowired
+    private final UsuarioService usuarioService;
     private final PasswordEncoder encoder;
     private final JwtTokenUtil jwtTokenUtil;
 
     public AuthController(AuthenticationManager authManager,
                           UsuarioRepository usuarioRepository,
                           PasswordEncoder encoder,
+                          UsuarioService usuarioService,
                           JwtTokenUtil jwtTokenUtil){
         this.authManager = authManager;
         this.userRepository = usuarioRepository;
         this.encoder = encoder;
         this.jwtTokenUtil = jwtTokenUtil;
+        this.usuarioService = usuarioService;
     }
 
     @PostMapping("/login")
-    public ResponseEntity<JwtResponse> login(@RequestBody LoginRequest loginRequest){
+    public ResponseEntity<Map<String, Object>> login(@RequestBody LoginRequest loginRequest) {
 
         Authentication authentication = authManager.authenticate(
                 new UsernamePasswordAuthenticationToken(loginRequest.getUsername(), loginRequest.getPassword()));
@@ -55,11 +68,16 @@ public class AuthController {
         SecurityContextHolder.getContext().setAuthentication(authentication);
         String jwt = jwtTokenUtil.generateJwtToken(authentication);
 
-        // UserDetails userDetails = (UserDetails) authentication.getPrincipal();
+        Usuario user = usuarioService.findByUsername(loginRequest.getUsername());
 
-        return ResponseEntity.ok(new JwtResponse(jwt));
+        ConverterDTO converterDTO = new ConverterDTO();
+        UsuarioDTO usuarioDTO = converterDTO.toDto(user);
+        Map<String, Object> response = new HashMap<>();
+        response.put("user", usuarioDTO);
+        response.put("token", jwt);
+
+        return ResponseEntity.ok(response);
     }
-
     @PostMapping("/register")
     public ResponseEntity<MessageResponse> register(@RequestBody RegisterRequest signUpRequest) {
 

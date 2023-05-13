@@ -22,4 +22,8 @@ public class UsuarioService {
     public Iterable<Usuario> findAll(){
         return usuarioRepository.findAll();
     }
+
+    public Usuario findByUsername(String username) {
+        return usuarioRepository.findByUsername(username).orElseThrow(() -> new NoSuchElementException("Usuario no encontrado"));
+    }
 }
