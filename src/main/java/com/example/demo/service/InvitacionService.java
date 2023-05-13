@@ -49,4 +49,8 @@ public class InvitacionService {
         usuarioService.agregarUsuarioEquipo(usuario, equipo);
         invitacionRepository.deleteById(invitacion.getId());
     }
+
+    public void delete(Long id) {
+        invitacionRepository.deleteById(id);
+    }
 }

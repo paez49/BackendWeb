@@ -24,18 +24,6 @@ public class UsuarioController {
     EquipoService equipoService;
     @Autowired
     private ConverterDTO converterDTO;
-    @GetMapping("/usuarios")
-    public List<UsuarioDTO> findAll() {
-        List<Usuario> usuarios = (List<Usuario>) usuarioService.findAll();
-        List<UsuarioDTO> usuariosDTO = converterDTO.toDtoListUsuarios(usuarios);
-        return usuariosDTO;
-    }
-    //Obtener todos los equipos los cuales el usuario no pertenece
-    //Lista equipos -> Presentacion lista de equipos
-    @GetMapping("/usuarios/{id}/equipos_disponibles")
-    public List<EquipoDTO> obtenerEquiposDisponibles(@PathVariable Long id) {
-        List<Equipo> equipos = equipoService.buscarEquiposDisponibles(id);
-        List<EquipoDTO> equipoDTO = converterDTO.toDtoListEquipos(equipos);
-        return equipoDTO;
-    }
+
+
 }

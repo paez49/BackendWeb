@@ -34,4 +34,8 @@ public class SolicitudService {
     public List<Solicitud> obtenerSolcitudesPorIdUsuario(long idUsuario){
         return solicitudRepository.findByUsuarioId(idUsuario);
     }
+
+    public void delete(Long id) {
+        solicitudRepository.deleteById(id);
+    }
 }

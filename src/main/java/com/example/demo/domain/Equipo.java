@@ -22,9 +22,8 @@ public class Equipo {
   private long id;
   private String nombreEquipo;
   private String siglas;
-  private boolean eliminado= Boolean.FALSE;
 
-  @ManyToMany(mappedBy = "equipos_participe", cascade = CascadeType.REMOVE)
+  @ManyToMany(mappedBy = "equipos_participe", cascade = { CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH, CascadeType.PERSIST })
   private Set<Usuario> jugadores_en_equipo;
 
   @OneToMany(mappedBy = "equipo", cascade = CascadeType.REMOVE)

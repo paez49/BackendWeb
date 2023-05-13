@@ -7,16 +7,14 @@ import com.example.demo.repository.EquipoRepository;
 import com.example.demo.service.EquipoService;
 import com.example.demo.util.ConverterDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/equipos")
 public class EquipoController {
     @Autowired
     EquipoRepository equipoRepository;
@@ -25,20 +23,25 @@ public class EquipoController {
     @Autowired
     private ConverterDTO converterDTO;
     //Obtener todos los equipos
-    @GetMapping("/equipos")
-    public List<Equipo> findAll() {
-        return equipoRepository.findAll();
-    }
-    @GetMapping("/equipos/{id}")
-    public ResponseEntity<EquipoDTO> obtenerEquipo(@PathVariable Long id) {
-        Equipo equipo = equipoService.findById(id);
+    @GetMapping("/{idEquipo}")
+    public ResponseEntity<EquipoDTO> obtenerEquipo(@PathVariable Long idEquipo) {
+        Equipo equipo = equipoService.findById(idEquipo);
         if (equipo == null) {
             return ResponseEntity.notFound().build();
         }
         EquipoDTO equipoDTO = converterDTO.toDto(equipo);
         return ResponseEntity.ok(equipoDTO);
     }
-
-
+    //Traer equipos en los que no hace parte el usuario
+    @GetMapping("/{idUsuario}/equipos_disponibles")
+    public List<EquipoDTO> obtenerEquiposDisponibles(@PathVariable Long idUsuario) {
+        List<Equipo> equipos = equipoService.buscarEquiposDisponibles(idUsuario);
+        List<EquipoDTO> equipoDTO = converterDTO.toDtoListEquipos(equipos);
+        return equipoDTO;
+    }
+    @DeleteMapping("/delete/{idEquipo}")
+    public ResponseEntity<String> eliminarEquipo(@PathVariable Long idEquipo) {
+        return equipoService.delete(idEquipo);
+    }
 
 }
