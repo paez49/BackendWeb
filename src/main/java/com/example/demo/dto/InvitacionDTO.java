@@ -7,6 +7,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class InvitacionDTO {
     private long id;
-    //private UsuarioDTO usuario;
+    private UsuarioDTO usuario;
     private EquipoDTO equipo;
 }

@@ -2,11 +2,12 @@ package com.example.demo.domain;
 
 import java.util.Set;
 import lombok.Data;
+import lombok.Getter;
 
 import javax.persistence.*;
 
 
-@Data
+@Getter
 @Entity
 @Table(name = "usuario")
 public class Usuario {

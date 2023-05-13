@@ -3,17 +3,14 @@ package com.example.demo.domain;
 import java.util.HashSet;
 import java.util.Set;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
+import lombok.*;
 import org.hibernate.annotations.SQLDelete;
 
-import lombok.Singular;
 import org.hibernate.annotations.Where;
 
 import javax.persistence.*;
 
-@Data
+@Getter
 @Builder
 @AllArgsConstructor
 @Entity

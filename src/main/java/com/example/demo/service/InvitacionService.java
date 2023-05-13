@@ -3,6 +3,9 @@ package com.example.demo.service;
 import com.example.demo.domain.Equipo;
 import com.example.demo.domain.Invitacion;
 import com.example.demo.domain.Usuario;
+import com.example.demo.dto.EquipoDTO;
+import com.example.demo.dto.InvitacionDTO;
+import com.example.demo.dto.UsuarioDTO;
 import com.example.demo.repository.InvitacionRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -39,6 +42,10 @@ public class InvitacionService {
     }
 
 
+    public void aceptarInvitacion(InvitacionDTO invitacion) {
 
-
+        UsuarioDTO usuario = invitacion.getUsuario();
+        EquipoDTO equipo = invitacion.getEquipo();
+        usuarioService.agregarUsuarioEquipo(usuario, equipo);
+    }
 }

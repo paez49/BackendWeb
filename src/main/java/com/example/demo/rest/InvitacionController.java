@@ -36,5 +36,14 @@ public class InvitacionController {
             return ResponseEntity.badRequest().body("Error al rechazar invitacion");
         }
     }
+    @PutMapping("/accept")
+    public ResponseEntity<?> aceptarInvitacion(@RequestBody InvitacionDTO invitacion){
+        try{
+            invitacionService.aceptarInvitacion(invitacion);
+            return ResponseEntity.ok().body("Invitacion aceptada");
+        }catch (Exception e){
+            return ResponseEntity.badRequest().body("Error al aceptar invitacion");
+        }
+    }
 
 }
