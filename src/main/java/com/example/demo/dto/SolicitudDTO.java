@@ -1,5 +1,6 @@
 package com.example.demo.dto;
 
+import com.example.demo.domain.Equipo;
 import com.example.demo.domain.Usuario;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,4 +10,6 @@ import lombok.NoArgsConstructor;
 public class SolicitudDTO {
     private long id;
     private UsuarioDTO usuario;
+
+    private EquipoDTO equipo;
 }

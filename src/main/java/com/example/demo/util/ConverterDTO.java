@@ -12,6 +12,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 
@@ -57,5 +58,12 @@ public class ConverterDTO {
                 .map(solicitud -> modelMapper.map(solicitud, SolicitudDTO.class))
                 .collect(Collectors.toList());
         return solicitudesDTO;
+    }
+
+    public List<EquipoDTO> toDtoSetEquipos(Set<Equipo> equipos) {
+        List<EquipoDTO> equiposDTO = equipos.stream()
+                .map(equipo -> modelMapper.map(equipo, EquipoDTO.class))
+                .collect(Collectors.toList());
+        return equiposDTO;
     }
 }

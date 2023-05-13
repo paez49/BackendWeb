@@ -6,6 +6,7 @@ import com.example.demo.domain.Invitacion;
 import com.example.demo.domain.Solicitud;
 import com.example.demo.domain.Usuario;
 import com.example.demo.repository.EquipoRepository;
+import com.example.demo.security.payload.MessageResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -16,6 +17,7 @@ import javax.persistence.PreRemove;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Optional;
+import java.util.Set;
 
 @Service
 public class EquipoService {
@@ -27,6 +29,8 @@ public class EquipoService {
 
   @Autowired
   private InvitacionService invitacionService;
+  @Autowired
+  private UsuarioService usuarioService;
 
   private EntityManager entityManager;
 
@@ -44,7 +48,7 @@ public class EquipoService {
     return equipoRepository.buscarEquiposDisponibles(idUsuario);
   }
 
-  public ResponseEntity<String> delete(Long idEquipo) {
+  public ResponseEntity<?> delete(Long idEquipo) {
     try {
       Equipo equipo = findById(idEquipo);
       for (Invitacion invitacion: equipo.getInvitaciones_a_jugadores()) {
@@ -62,13 +66,18 @@ public class EquipoService {
       }
       equipoRepository.delete(equipo);
 
-      return ResponseEntity.ok("El equipo con ID " + idEquipo + " fue eliminado exitosamente.");
+      return ResponseEntity.ok(new MessageResponse("El equipo con ID " + idEquipo + " fue eliminado exitosamente."));
     } catch (NoSuchElementException e) {
-      return ResponseEntity.status(HttpStatus.NOT_FOUND).body("No se encontró el equipo con ID " + idEquipo + ".");
+      return ResponseEntity.status(HttpStatus.NOT_FOUND).body(new MessageResponse("No se encontró el equipo con ID " + idEquipo + "."));
     } catch (Exception e) {
-      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body("Ocurrió un error al eliminar el equipo con ID " + idEquipo + ".");
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new MessageResponse("Ocurrió un error al eliminar el equipo con ID " + idEquipo + "."));
     }
 
   }
 
+  public Set<Equipo> buscarEquiposParticipe(Long idUsuario) {
+    Usuario usuario = usuarioService.findById(idUsuario);
+    return usuario.getEquipos_participe();
+
+  }
 }

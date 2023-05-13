@@ -12,6 +12,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.Set;
 
 @RestController
 @RequestMapping("/equipos")
@@ -39,8 +40,14 @@ public class EquipoController {
         List<EquipoDTO> equipoDTO = converterDTO.toDtoListEquipos(equipos);
         return equipoDTO;
     }
+    @GetMapping("/{idUsuario}/equipos_participe")
+    public List<EquipoDTO> obtenerEquiposParticipe(@PathVariable Long idUsuario) {
+        Set<Equipo> equipos =  equipoService.buscarEquiposParticipe(idUsuario);
+        List<EquipoDTO> equipoDTO = converterDTO.toDtoSetEquipos(equipos);
+        return equipoDTO;
+    }
     @DeleteMapping("/delete/{idEquipo}")
-    public ResponseEntity<String> eliminarEquipo(@PathVariable Long idEquipo) {
+    public ResponseEntity<?> eliminarEquipo(@PathVariable Long idEquipo) {
         return equipoService.delete(idEquipo);
     }
 
