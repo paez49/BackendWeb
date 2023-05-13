@@ -35,11 +35,7 @@ public class InvitacionService {
     }
 
     public void rechazarInvitacion(Long idInvitacion) {
-        Invitacion invitacion = invitacionRepository.findById(idInvitacion).orElse(null);
-        if (invitacion != null) {
-            invitacion.setAceptada(Boolean.FALSE);
-            invitacionRepository.save(invitacion);
-        }
+        invitacionRepository.deleteById(idInvitacion);
     }
 
 

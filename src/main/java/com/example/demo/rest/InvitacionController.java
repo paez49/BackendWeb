@@ -27,7 +27,7 @@ public class InvitacionController {
     }
     //Rechazar invitacion
     //Mis invitaciones -> Boton rechazar
-    @PutMapping("/deny/{idInvitacion}")
+    @DeleteMapping("/deny/{idInvitacion}")
     public ResponseEntity<?> rechazarInvitacion(@PathVariable Long idInvitacion){
         try{
             invitacionService.rechazarInvitacion(idInvitacion);
@@ -36,4 +36,5 @@ public class InvitacionController {
             return ResponseEntity.badRequest().body("Error al rechazar invitacion");
         }
     }
+
 }
