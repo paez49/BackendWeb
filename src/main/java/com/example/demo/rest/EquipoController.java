@@ -24,6 +24,14 @@ public class EquipoController {
     @Autowired
     private ConverterDTO converterDTO;
     //Obtener todos los equipos
+    @PostMapping("/create")
+    public ResponseEntity<EquipoDTO> crearEquipo(@RequestBody EquipoDTO equipoDTO) {
+        System.out.println(equipoDTO);
+        Equipo equipo = converterDTO.toEntity(equipoDTO);
+        equipo = equipoService.save(equipo);
+        equipoDTO = converterDTO.toDto(equipo);
+        return ResponseEntity.status(HttpStatus.CREATED).body(equipoDTO);
+    }
     @GetMapping("/{idEquipo}")
     public ResponseEntity<EquipoDTO> obtenerEquipo(@PathVariable Long idEquipo) {
         Equipo equipo = equipoService.findById(idEquipo);

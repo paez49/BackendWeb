@@ -9,6 +9,4 @@ public class EquipoDTO {
     private long id;
     private String nombreEquipo;
     private String siglas;
-    //private boolean eliminado;
-
 }

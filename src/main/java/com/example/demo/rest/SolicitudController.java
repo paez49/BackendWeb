@@ -44,6 +44,7 @@ public class SolicitudController {
         List<SolicitudDTO> solicitudes = converterDTO.toDtoListSolicitudes(solicitudService.obtenerSolcitudesPorIdEquipo(idEquipo));
         return ResponseEntity.ok().body(solicitudes);
     }
+    //Equipos -> Solicitudes pendientes -> Boton eliminar
     @DeleteMapping("/deny/{idSolicitud}")
     public ResponseEntity<?> rechazarSolicitud(@PathVariable Long idSolicitud){
         try{
@@ -53,6 +54,7 @@ public class SolicitudController {
             return ResponseEntity.badRequest().body("Error al rechazar Solicitud");
         }
     }
+    //Equipos -> Solicitudes pendientes -> Boton aceptar
     @PutMapping("/accept")
     public ResponseEntity<?> aceptarSolicitud(@RequestBody SolicitudDTO solicitud){
         try{

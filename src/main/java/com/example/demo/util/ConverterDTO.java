@@ -12,6 +12,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Set;
 import java.util.stream.Collectors;
 
@@ -66,4 +67,11 @@ public class ConverterDTO {
                 .collect(Collectors.toList());
         return equiposDTO;
     }
+    public Equipo toEntity(EquipoDTO equipoDTO) {
+        Equipo equipo = new Equipo();
+        equipo.setNombreEquipo(Objects.requireNonNullElse(equipoDTO.getNombreEquipo(), "default"));
+        equipo.setSiglas(Objects.requireNonNullElse(equipoDTO.getSiglas(), "def"));
+        return equipo;
+    }
+
 }
