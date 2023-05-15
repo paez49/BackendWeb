@@ -28,8 +28,8 @@ public class SolicitudController {
 
     //Crear solicitud
     //Lista solicitudes -> Boton enviar solicitud
-    @PostMapping("/add")
-    public ResponseEntity<?> crearSolicitud(@RequestBody Long idUsuario, @RequestBody Long idEquipo) {
+    @PostMapping("/add/user={idUsuario}/equipo={idEquipo}")
+    public ResponseEntity<?> crearSolicitud(@PathVariable Long idUsuario, @PathVariable Long idEquipo) {
         try {
             solicitudService.crearSolicitud(idUsuario, idEquipo);
             return ResponseEntity.ok(new MessageResponse("Solicitud enviada con exito"));

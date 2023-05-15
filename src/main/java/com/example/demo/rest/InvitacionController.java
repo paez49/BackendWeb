@@ -47,13 +47,13 @@ public class InvitacionController {
             return ResponseEntity.badRequest().body("Error al aceptar invitacion");
         }
     }
-  @PostMapping("/add")
-  public ResponseEntity<?> crearSolicitud(@RequestBody Long idUsuario, @RequestBody Long idEquipo) {
+  @PostMapping("/add/user={idUsuario}/equipo={idEquipo}")
+  public ResponseEntity<?> crearSolicitud(@PathVariable Long idUsuario, @PathVariable Long idEquipo) {
     try {
       invitacionService.crearInvitacion(idEquipo , idUsuario);
-      return ResponseEntity.ok(new MessageResponse("Solicitud enviada con exito"));
+      return ResponseEntity.ok(new MessageResponse("Invitacion enviada con exito"));
     } catch (Exception e) {
-      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new MessageResponse("Ya hay una solicitud registrada para este equipo"));
+      return ResponseEntity.status(HttpStatus.INTERNAL_SERVER_ERROR).body(new MessageResponse("Ya hay una invitacion registrada para este equipo"));
     }
   }
 }
