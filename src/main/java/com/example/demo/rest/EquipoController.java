@@ -24,11 +24,11 @@ public class EquipoController {
     @Autowired
     private ConverterDTO converterDTO;
     //Obtener todos los equipos
-    @PostMapping("/create")
-    public ResponseEntity<EquipoDTO> crearEquipo(@RequestBody EquipoDTO equipoDTO) {
+    @PostMapping("/create/{idUsuario}")
+    public ResponseEntity<EquipoDTO> crearEquipo(@RequestBody EquipoDTO equipoDTO,@PathVariable Long idUsuario) {
         System.out.println(equipoDTO);
         Equipo equipo = converterDTO.toEntity(equipoDTO);
-        equipo = equipoService.save(equipo);
+        equipo = equipoService.save(equipo,idUsuario);
         equipoDTO = converterDTO.toDto(equipo);
         return ResponseEntity.status(HttpStatus.CREATED).body(equipoDTO);
     }

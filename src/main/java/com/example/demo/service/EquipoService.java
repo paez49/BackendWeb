@@ -41,7 +41,9 @@ public class EquipoService {
     Optional<Equipo> equipoOptional = equipoRepository.findById(id);
     return equipoOptional.orElseThrow(() -> new RuntimeException("Equipo no encontrado"));
   }
-  public Equipo save(Equipo equipo) {
+  public Equipo save(Equipo equipo,Long idUsuario) {
+    Usuario usuario = usuarioService.findById(idUsuario);
+    usuario.getEquipos_participe().add(equipo);
     return equipoRepository.save(equipo);
   }
   public List<Equipo> buscarEquiposDisponibles(Long idUsuario){

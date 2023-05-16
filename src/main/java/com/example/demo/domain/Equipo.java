@@ -34,6 +34,8 @@ public class Equipo {
   private Set<Invitacion> invitaciones_a_jugadores;
   public Equipo() {
     this.jugadores_en_equipo = new HashSet<>();
+    this.solicitudes_de_jugadores = new HashSet<>();
+    this.invitaciones_a_jugadores = new HashSet<>();
   }
 
 }
