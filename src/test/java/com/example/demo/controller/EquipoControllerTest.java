@@ -16,33 +16,17 @@ import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
 import org.springframework.test.web.servlet.MockMvc;
 
-import java.util.HashSet;
-import java.util.List;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-import static org.mockito.Mockito.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 @SpringBootTest
 @AutoConfigureMockMvc(addFilters = false)
 public class EquipoControllerTest {
-
-    @Mock
-    private EquipoService equipoService;
-
-    @InjectMocks
-    private EquipoController equipoController;
     @Autowired
     private MockMvc mockMvc;
-    @Autowired
-    private ConverterDTO converterDTO = new ConverterDTO();
-
     @BeforeEach
     public void setUp() {
         MockitoAnnotations.openMocks(this);
@@ -60,6 +44,9 @@ public class EquipoControllerTest {
                 .content("{\"nombreEquipo\":\"Equipo 1\",\"siglas\":\"EQ1\"}"))
                 .andExpect(status().isCreated());
     }
-
+    @Test
+    public void testEliminarEquipoBadRequest() throws Exception {
+        mockMvc.perform(delete("/equipos/delete")).andExpect(status().isMethodNotAllowed());
+    }
 }
 

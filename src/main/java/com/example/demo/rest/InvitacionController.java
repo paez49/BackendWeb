@@ -48,7 +48,7 @@ public class InvitacionController {
         }
     }
   @PostMapping("/add/user={idUsuario}/equipo={idEquipo}")
-  public ResponseEntity<?> crearSolicitud(@PathVariable Long idUsuario, @PathVariable Long idEquipo) {
+  public ResponseEntity<?> crearInvitacion(@PathVariable Long idUsuario, @PathVariable Long idEquipo) {
     try {
       invitacionService.crearInvitacion(idEquipo , idUsuario);
       return ResponseEntity.ok(new MessageResponse("Invitacion enviada con exito"));
