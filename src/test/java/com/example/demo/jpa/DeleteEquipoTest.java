@@ -1,6 +1,6 @@
 package com.example.demo.jpa;
 
-import com.example.demo.domain.Equipo;
+import com.example.demo.domain.Libro;
 import com.example.demo.repository.EquipoRepository;
 import com.example.demo.service.EquipoService;
 import org.junit.jupiter.api.Assertions;
@@ -31,7 +31,7 @@ public class DeleteEquipoTest {
     equipoService.delete(1L);
 
     // Verifica si el equipo fue eliminado correctamente
-    Optional<Equipo> equipoAux = equipoRepository.findById(1L);
+    Optional<Libro> equipoAux = equipoRepository.findById(1L);
     Assertions.assertTrue(equipoAux.isEmpty(), "El equipo se borró con exito");
     //Assertions.assertTrue(equipoAux.get().isEliminado(), "La eliminación lógica se realizó correctamente");
   }

@@ -1,7 +1,7 @@
 package com.example.demo.jpa;
 
 
-import com.example.demo.domain.Equipo;
+import com.example.demo.domain.Libro;
 import com.example.demo.domain.Usuario;
 import com.example.demo.repository.EquipoRepository;
 import com.example.demo.repository.UsuarioRepository;
@@ -65,18 +65,18 @@ public class UsuarioEquiposTest {
   @Test
   public void testCrearEquipos(){
     try {
-      Iterator<Equipo> equipos = equipoRepository.findAll().iterator();
+      Iterator<Libro> equipos = equipoRepository.findAll().iterator();
       int cantidad = 0;
       while( equipos.hasNext() ) {
         equipos.next();
         cantidad ++;
       }
-      Equipo equipo = new Equipo();
+      Libro equipo = new Libro();
       equipo.setNombreEquipo("Eskere FC");
       equipo.setSiglas("EFC");
       equipoRepository.save(equipo);
 
-      equipo = new Equipo();
+      equipo = new Libro();
       equipo.setNombreEquipo("Hola FC");
       equipo.setSiglas("HFC");
       equipoRepository.save(equipo);

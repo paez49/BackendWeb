@@ -1,7 +1,7 @@
 package com.example.demo.jpa;
 
 
-import com.example.demo.domain.Equipo;
+import com.example.demo.domain.Libro;
 import com.example.demo.domain.Invitacion;
 import com.example.demo.domain.Solicitud;
 import com.example.demo.domain.Usuario;
@@ -35,7 +35,7 @@ public class InvitacionSolicitudTest {
 
     //Confirmar que tanto el jugador como el equipo existen en la base de datos
     Usuario usuario = userRepository.findById((long) 1).get();
-    Equipo equipo = equipoRepository.findById((long) 1).get();
+    Libro equipo = equipoRepository.findById((long) 1).get();
 
     // Crear una nueva solicitud
     Solicitud solicitud = new Solicitud();
@@ -50,7 +50,7 @@ public class InvitacionSolicitudTest {
   @Test
   public void testSolicitudExistente(){
     Usuario usuario = userRepository.findById((long) 1).get();
-    Equipo equipo = equipoRepository.findById((long) 1).get();
+    Libro equipo = equipoRepository.findById((long) 1).get();
 // Intentar crear otra invitación con los mismos detalles
     Solicitud otraSolicitud = new Solicitud();
     otraSolicitud.setUsuario(usuario);
@@ -67,7 +67,7 @@ public class InvitacionSolicitudTest {
 
     //Confirmar que tanto el jugador como el equipo existen en la base de datos
     Usuario usuario = userRepository.findById((long) 1).get();
-    Equipo equipo = equipoRepository.findById((long) 1).get();
+    Libro equipo = equipoRepository.findById((long) 1).get();
 
     // Crear una nueva invitación
     Invitacion invitacion = new Invitacion();
@@ -82,7 +82,7 @@ public class InvitacionSolicitudTest {
   @Test
   public void testInvitacionExistente(){
     Usuario usuario = userRepository.findById((long) 1).get();
-    Equipo equipo = equipoRepository.findById((long) 1).get();
+    Libro equipo = equipoRepository.findById((long) 1).get();
 // Intentar crear otra invitación con los mismos detalles
     Invitacion otraInvitacion = new Invitacion();
     otraInvitacion.setUsuario(usuario);

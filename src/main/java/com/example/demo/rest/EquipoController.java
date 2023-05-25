@@ -1,7 +1,7 @@
 package com.example.demo.rest;
 
 
-import com.example.demo.domain.Equipo;
+import com.example.demo.domain.Libro;
 import com.example.demo.dto.EquipoDTO;
 import com.example.demo.repository.EquipoRepository;
 import com.example.demo.service.EquipoService;
@@ -27,14 +27,14 @@ public class EquipoController {
     @PostMapping("/create/{idUsuario}")
     public ResponseEntity<EquipoDTO> crearEquipo(@RequestBody EquipoDTO equipoDTO,@PathVariable Long idUsuario) {
         System.out.println(equipoDTO);
-        Equipo equipo = converterDTO.toEntity(equipoDTO);
+        Libro equipo = converterDTO.toEntity(equipoDTO);
         equipo = equipoService.save(equipo,idUsuario);
         equipoDTO = converterDTO.toDto(equipo);
         return ResponseEntity.status(HttpStatus.CREATED).body(equipoDTO);
     }
     @GetMapping("/{idEquipo}")
     public ResponseEntity<EquipoDTO> obtenerEquipo(@PathVariable Long idEquipo) {
-        Equipo equipo = equipoService.findById(idEquipo);
+        Libro equipo = equipoService.findById(idEquipo);
         if (equipo == null) {
             return ResponseEntity.notFound().build();
         }
@@ -45,13 +45,13 @@ public class EquipoController {
     // Lista equipos -> Presentacion
     @GetMapping("/{idUsuario}/equipos_disponibles")
     public List<EquipoDTO> obtenerEquiposDisponibles(@PathVariable Long idUsuario) {
-        List<Equipo> equipos = equipoService.buscarEquiposDisponibles(idUsuario);
+        List<Libro> equipos = equipoService.buscarEquiposDisponibles(idUsuario);
         List<EquipoDTO> equipoDTO = converterDTO.toDtoListEquipos(equipos);
         return equipoDTO;
     }
     @GetMapping("/{idUsuario}/equipos_participe")
     public List<EquipoDTO> obtenerEquiposParticipe(@PathVariable Long idUsuario) {
-        Set<Equipo> equipos =  equipoService.buscarEquiposParticipe(idUsuario);
+        Set<Libro> equipos =  equipoService.buscarEquiposParticipe(idUsuario);
         List<EquipoDTO> equipoDTO = converterDTO.toDtoSetEquipos(equipos);
         return equipoDTO;
     }

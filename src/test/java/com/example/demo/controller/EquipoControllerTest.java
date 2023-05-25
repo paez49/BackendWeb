@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.domain.Equipo;
+import com.example.demo.domain.Libro;
 import com.example.demo.domain.Invitacion;
 import com.example.demo.domain.Solicitud;
 import com.example.demo.dto.EquipoDTO;

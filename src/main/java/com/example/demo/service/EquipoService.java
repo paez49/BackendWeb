@@ -1,7 +1,7 @@
 package com.example.demo.service;
 
 
-import com.example.demo.domain.Equipo;
+import com.example.demo.domain.Libro;
 import com.example.demo.domain.Invitacion;
 import com.example.demo.domain.Solicitud;
 import com.example.demo.domain.Usuario;
@@ -34,25 +34,25 @@ public class EquipoService {
 
   private EntityManager entityManager;
 
-  public Iterable<Equipo> findAll(){
+  public Iterable<Libro> findAll(){
     return equipoRepository.findAll();
   }
-  public Equipo findById(Long id) {
-    Optional<Equipo> equipoOptional = equipoRepository.findById(id);
+  public Libro findById(Long id) {
+    Optional<Libro> equipoOptional = equipoRepository.findById(id);
     return equipoOptional.orElseThrow(() -> new RuntimeException("Equipo no encontrado"));
   }
-  public Equipo save(Equipo equipo,Long idUsuario) {
+  public Libro save(Libro equipo,Long idUsuario) {
     Usuario usuario = usuarioService.findById(idUsuario);
     usuario.getEquipos_participe().add(equipo);
     return equipoRepository.save(equipo);
   }
-  public List<Equipo> buscarEquiposDisponibles(Long idUsuario){
+  public List<Libro> buscarEquiposDisponibles(Long idUsuario){
     return equipoRepository.buscarEquiposDisponibles(idUsuario);
   }
 
   public ResponseEntity<?> delete(Long idEquipo) {
     try {
-      Equipo equipo = findById(idEquipo);
+      Libro equipo = findById(idEquipo);
       for (Invitacion invitacion: equipo.getInvitaciones_a_jugadores()) {
         invitacionService.delete(invitacion.getId());
       }
@@ -77,7 +77,7 @@ public class EquipoService {
 
   }
 
-  public Set<Equipo> buscarEquiposParticipe(Long idUsuario) {
+  public Set<Libro> buscarEquiposParticipe(Long idUsuario) {
     Usuario usuario = usuarioService.findById(idUsuario);
     return usuario.getEquipos_participe();
 
