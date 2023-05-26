@@ -1,31 +1,22 @@
 package com.example.demo.domain;
-
-import java.util.HashSet;
-import java.util.Set;
-
+import jakarta.persistence.*;
 import lombok.*;
-import org.hibernate.annotations.SQLDelete;
-
-import org.hibernate.annotations.Where;
-
-import javax.persistence.*;
 
 @Getter
 @Setter
 @Builder
 @AllArgsConstructor
+@NoArgsConstructor
 @Entity
-@Table(name = "libro")
-public class Libro {
+@Table(name = "libro_lealsa")
 
-  private String titulo;
-  private String referencia;
-  private String autor;
-  private String precio;
-  private String ubicacion;
-
-  public Libro() {
-
-  }
-
+public class libro {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
+    private String titulo;
+    private String referencia;
+    private String autor;
+    private double precio;
+    private String ubicacion;
 }
