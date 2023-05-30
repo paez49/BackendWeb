@@ -40,5 +40,7 @@ public class UsuarioService {
         usuario.getEquipos_participe().add(equipo);
         usuarioRepository.save(usuario);
     }
-
+    public List<Usuario> findAllUsuariosNotInEquipo(Long idEquipo) {
+        return usuarioRepository.findAllUsuariosNotInEquipo(idEquipo);
+    }
 }
