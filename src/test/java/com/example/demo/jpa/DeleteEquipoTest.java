@@ -26,9 +26,9 @@ public class DeleteEquipoTest {
 
   @Test
   @Transactional
-  public void testDeleteByIdLogic() {
+  public void testDeleteById() {
     // Elimina el equipo con deleteByIdLogic
-    equipoService.delete(1L);
+    equipoService.delete(164L);
 
     // Verifica si el equipo fue eliminado correctamente
     Optional<Equipo> equipoAux = equipoRepository.findById(1L);
