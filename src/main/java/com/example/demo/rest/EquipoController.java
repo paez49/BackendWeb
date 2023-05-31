@@ -59,5 +59,22 @@ public class EquipoController {
     public ResponseEntity<?> eliminarEquipo(@PathVariable Long idEquipo) {
         return equipoService.delete(idEquipo);
     }
+    @PutMapping("/{idEquipo}")
+    public ResponseEntity<EquipoDTO> actualizarEquipo(@PathVariable Long idEquipo, @RequestBody EquipoDTO equipoDTO) {
+        Equipo equipo = equipoService.findById(idEquipo);
+        if (equipo == null) {
+            return ResponseEntity.notFound().build();
+        }
+        if(equipoDTO.getNombreEquipo() != null){
+            equipo.setNombreEquipo(equipoDTO.getNombreEquipo());
+        }
+        if (equipoDTO.getSiglas() != null){
+            equipo.setSiglas(equipoDTO.getSiglas());
+        }
 
+        equipo = equipoService.save(equipo); // Guarda los cambios en la base de datos
+
+        equipoDTO = converterDTO.toDto(equipo);
+        return ResponseEntity.ok(equipoDTO);
+    }
 }

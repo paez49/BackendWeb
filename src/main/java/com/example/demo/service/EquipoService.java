@@ -46,6 +46,9 @@ public class EquipoService {
     usuario.getEquipos_participe().add(equipo);
     return equipoRepository.save(equipo);
   }
+  public Equipo save(Equipo equipo) {
+    return equipoRepository.save(equipo);
+  }
   public List<Equipo> buscarEquiposDisponibles(Long idUsuario){
     return equipoRepository.buscarEquiposDisponibles(idUsuario);
   }
