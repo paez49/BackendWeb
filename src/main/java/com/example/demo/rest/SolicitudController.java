@@ -55,10 +55,10 @@ public class SolicitudController {
         }
     }
     //Equipos -> Solicitudes pendientes -> Boton aceptar
-    @PutMapping("/accept")
-    public ResponseEntity<?> aceptarSolicitud(@RequestBody SolicitudDTO solicitud){
+    @PutMapping("/accept/{idSolicitud}")
+    public ResponseEntity<?> aceptarSolicitud(@PathVariable Long idSolicitud){
         try{
-            solicitudService.aceptarSolicitud(solicitud);
+            solicitudService.aceptarSolicitud(idSolicitud);
             return ResponseEntity.ok().body("Solicitud aceptada");
         }catch (Exception e){
             return ResponseEntity.badRequest().body("Error al aceptar Solicitud");

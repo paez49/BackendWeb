@@ -7,6 +7,7 @@ import com.example.demo.dto.EquipoDTO;
 import com.example.demo.dto.SolicitudDTO;
 import com.example.demo.dto.UsuarioDTO;
 import com.example.demo.repository.SolicitudRepository;
+import com.example.demo.util.ConverterDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -21,6 +22,7 @@ public class SolicitudService {
     UsuarioService usuarioService;
     @Autowired
     EquipoService equipoService;
+    ConverterDTO converterDTO = new ConverterDTO();
 
     public void crearSolicitud(Long idUsuario, Long idEquipo) {
         Usuario usuario = usuarioService.findById(idUsuario);
@@ -45,9 +47,10 @@ public class SolicitudService {
         solicitudRepository.deleteById(idSolicitud);
     }
 
-    public void aceptarSolicitud(SolicitudDTO solicitud) {
-        UsuarioDTO usuario = solicitud.getUsuario();
-        EquipoDTO equipo = solicitud.getEquipo();
+    public void aceptarSolicitud(Long idSolicitud) {
+        Solicitud solicitud = solicitudRepository.getById(idSolicitud);
+        UsuarioDTO usuario = converterDTO.toDto(solicitud.getUsuario());
+        EquipoDTO equipo = converterDTO.toDto(solicitud.getEquipo());
         usuarioService.agregarUsuarioEquipo(usuario, equipo);
         solicitudRepository.deleteById(solicitud.getId());
     }
